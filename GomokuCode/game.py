@@ -130,6 +130,7 @@ class Gomoku:
             ai_ope = [ai_ope_x, ai_ope_y]
         except ValueError:
             raise ValueError('AI程序计算出来的数值不正确')
+        print('Coordinate:%d %d' % (ai_ope_x, ai_ope_y))
         ed = time.time()
         print('生成了%d个节点，用时%.4f' % (node_len, ed - st))
         self.g_map[ai_ope[0]][ai_ope[1]] = 2
@@ -151,7 +152,7 @@ class Gomoku:
 
     def ai_play_1step(self):
         if AI_USE_CPP:
-            self.max_search_steps = 3
+            self.max_search_steps = 2
             self.ai_play_1step_by_cpp()
         else:
             self.max_search_steps = 2
