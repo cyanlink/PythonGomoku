@@ -516,7 +516,7 @@ void AI1Step::Search(const uint32_t cur_node_dx, const uint32_t max_depth){
 Point AI1Step::GetFinalRes(){
     if (NextNodeList[0] == -1){
         printf("NextNodeList[0] = -1.\n");
-//        abort();
+        return Point(-1, -1);
     }
     return MethodTree[NextNodeList[0]].Ope;
 }

@@ -3,3 +3,9 @@ __pycache__/
 *.exe
 *.pyd
 *.bak
+core.*
+*.o
+*.so
+*.gdb_history
+*.pro
+*.pro.user
