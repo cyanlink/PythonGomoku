@@ -1,7 +1,7 @@
 import os
 import time
 
-AI_USE_CPP = False
+AI_USE_CPP = True
 
 if not AI_USE_CPP:  # 是否用C++版的AI脚本
     from ai import AI1Step
@@ -124,8 +124,10 @@ class Gomoku:
         for x in range(15):
             mapstring.extend(self.g_map[x])
         try:
-            node_len, ai_ope_x, ai_poe_y = example.ai_1step(self.cur_step, int(True), self.max_search_steps, mapstring)
-            ai_ope = [ai_ope_x, ai_poe_y]
+            node_len, ai_ope_x, ai_ope_y = example.ai_1step(self.cur_step, int(True), self.max_search_steps, mapstring)
+            if (ai_ope_x == -1 & ai_ope_y == -1):
+                raise ValueError('Leaf Node met')
+            ai_ope = [ai_ope_x, ai_ope_y]
         except ValueError:
             raise ValueError('AI程序计算出来的数值不正确')
         ed = time.time()

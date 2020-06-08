@@ -453,7 +453,9 @@ void AI1Step::Search(const uint32_t cur_node_dx, const uint32_t max_depth){
                         NextNodeList[cur_node_dx] = static_cast<int>(node_new_dx);
                     }
                 }
-            }else{
+            }
+            
+            else{
                 if (MethodTree[cur_node_dx].Depth % 2 == 0){ //这一步是假想中电脑走的，因此需要让分数尽量大，且应该修改alpha值
                     if (MethodTree[node_new_dx].Score > MethodTree[cur_node_dx].Score){
                         MethodTree[cur_node_dx].Score = MethodTree[node_new_dx].Score;
