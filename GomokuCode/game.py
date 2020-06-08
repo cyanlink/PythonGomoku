@@ -32,7 +32,9 @@ class Gomoku:
                     if self.g_map[pos_x][pos_y] == 0:
                         self.g_map[pos_x][pos_y] = 1
                         self.cur_step += 1
-                        return
+                        return True
+                    else: return False
+                        
             except ValueError:  # 玩家输入不正确的情况（例如输入了‘A’）
                 continue
 
@@ -152,7 +154,7 @@ class Gomoku:
 
     def ai_play_1step(self):
         if AI_USE_CPP:
-            self.max_search_steps = 2
+            self.max_search_steps = 3
             self.ai_play_1step_by_cpp()
         else:
             self.max_search_steps = 2
