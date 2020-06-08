@@ -1,7 +1,7 @@
 import os
 import time
 
-AI_USE_CPP = False
+AI_USE_CPP = True
 
 if not AI_USE_CPP:  # 是否用C++版的AI脚本
     from ai import AI1Step
